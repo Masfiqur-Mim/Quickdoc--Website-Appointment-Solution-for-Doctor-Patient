@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Registration</title>
 </head>
 <body>
-<form action="registration_user.html" method="post">
+<form action= "{% url 'accounts:checkCompletedUserReg' %}" method="post">
+    {% csrf_token %}
 
 <fieldset>
 
@@ -14,10 +15,6 @@
 First Name: <input type="text" name="first_name"><br>
 
 Last Name: <input type="text" name="last_name"><br>
-
-Address: <input type="text" name="address"><br>
-
-City: <input type="text" name="last_name"><br><!--will make this a drop down menu later-->
 
 Mobile No.: <input type="text" name="mobile"><br>
 
@@ -31,7 +28,7 @@ Password: <input type="password" name="pass"><br>
 
 Confirm Password: <input type="password" name="conf_pass"><br>
 
-<input type="submit" value="submit"><br>
+<input type="submit" value="submit" ><br>
 
 </form>
 

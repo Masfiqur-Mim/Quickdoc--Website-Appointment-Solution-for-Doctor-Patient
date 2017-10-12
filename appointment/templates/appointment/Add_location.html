@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new Location</title>
+</head>
+<body>
+
+<form action="{% url 'appointment:add_location' doctor_id %}" method="post">
+    {% csrf_token %}
+    Area Name:<input type="text" name="location_area"><br>
+
+    City Name:
+    <select required name="location_city">
+        <option value="Dhaka">Dhaka</option>
+        <option value="Chittagong">Chittagong</option>
+        <option value="Rajshahi">Rajshahi</option>
+        <option value="Khulna">Khulna</option>
+        <option value="Rangpur">Rangpur</option>
+        <option value="Barisal">Barisal</option>
+        <option value="Sylhet">Sylhet</option>
+    </select><br>
+
+    Fee<input type="text" required name="fee"><br>
+
+
+     Sitting Day:
+    <select required name="location_day">
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+    </select><br>
+
+
+
+    <input type="submit" value="Add">
+
+
+</form>
+
+
+</body>
+</html>

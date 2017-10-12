@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--user menu bar-->
+
+<h3>Please fill up patient data</h3>
+
+
+<form action="{% url 'appointment:get_app2' user.pk %}" method="post">
+    {% csrf_token %}
+
+Patient Name<input type="text" name="pName">
+<br>
+
+City<select required name="pCity">
+        <option value="Dhaka">Dhaka</option>
+        <option value="Chittagong">Chittagong</option>
+        <option value="Rajshahi">Rajshahi</option>
+        <option value="Khulna">Khulna</option>
+        <option value="Rangpur">Rangpur</option>
+        <option value="Barisal">Barisal</option>
+        <option value="Sylhet">Sylhet</option>
+</select><br>
+
+
+    Area<input type="text" name="pArea"><br>
+
+Gender
+<br>
+<input type="radio" value="male" name="pGender">Male<br>
+<input type="radio" value="female" name="pGender">Female<br>
+<input type="radio" value="other" name="pGender">Other<br>
+<br>
+
+Guardian Name<input type="text" name="pGuardian">
+<br>
+
+
+    Contact No<input type="text" name="pContact">
+<br>
+
+Age<select required name="pAge">
+    {% for i in range %}
+        <option value="i">{{i}}</option>
+    {% endfor %}
+</select>
+
+<input type="submit" value="submit">
+<br>
+
+
+
+
+</form>
+
+
+
+
+</body>
+</html>

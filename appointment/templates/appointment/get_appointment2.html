@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Filters</title>
+</head>
+<body>
+
+<h3>Please select from these options to search your preferred doctor</h3>
+
+<!--user menu bar-->
+<form action="{% url 'appointment:get_app3' user_counter patient_counter %}" method="post">
+    {% csrf_token %}
+<!--Qualification(min.)
+	<select required name="doc_qualification">
+                <option value="MBBS">M.B.B.S.</option>
+                <option value="FCPS">F.C.P.S.</option>
+                <option value="BDS">B.D.S.</option>
+	</select><br>-->
+
+Category
+	<select required name="doc_category">
+                <option value="Heart">Heart</option>
+                <option value="Pediatric">Pediatric</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Kidney">Kidney</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="Ear Nose Throat">Ear Throat Nose</option>
+	</select><br>
+
+
+
+
+<!--doc will select the time.Patient doesn't have that ability-->
+
+<input type="submit" value="Search">
+<br>
+
+</form>
+
+
+
+
+</body>
+</html>

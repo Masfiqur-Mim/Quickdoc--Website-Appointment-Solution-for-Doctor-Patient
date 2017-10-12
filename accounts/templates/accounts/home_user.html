@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Home Page</title>
+</head>
+<body>
+
+User Profile page.<br><br>
+
+<a href="#">My Home</a><br>
+
+
+<a href="{% url 'appointment:get_app1' user_counter %}">Get New Appointment</a><br>
+
+
+<a href="{% url 'accounts:user_profile' user_counter %}">My Profile</a><br>
+
+
+<a href="#">View Previous Appointments</a><br>
+
+
+<a href="http://www.google.com">FAQ</a><br>
+
+
+<a href="#">Log Out</a>
+
+
+
+
+</body>
+</html>

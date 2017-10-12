@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+</head>
+<body>
+
+<h2>Sign In to your account</h2>
+
+<p id="demo1">
+
+<form action="{% url 'accounts:user_sign_in' %}" method="post">
+{% csrf_token %}
+
+<h4>General User</h4><br>
+
+Username<input type="text" name= "username"><br>
+
+Password<input type="password" name="pass"><br>
+
+
+<input type="submit" value="Sign In"><br>
+
+</form>
+
+<a href="http://www.google.com">Forgot Password?</a>
+
+</p>
+
+
+
+
+<p id="demo2">
+
+<form action= "{% url 'accounts:doc_sign_in' %}" method="post">
+{% csrf_token %}
+
+
+<h3>Doctor</h3><br>
+
+BMDC Registration No.<input type="text" name= "doc_bmdc"><br>
+
+Password<input type="password" name="doc_pass"><br>
+
+
+<input type="submit" value="Sign In"><br>
+
+</form>
+
+<a href="http://www.google.com">Forgot Password?</a>
+
+</p>
+
+
+
+
+
+
+
+</body>
+</html>

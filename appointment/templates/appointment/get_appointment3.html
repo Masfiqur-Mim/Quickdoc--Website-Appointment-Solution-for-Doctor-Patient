@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Select your preferred doctor from the list</h3>
+
+<!--user menu bar-->
+
+{%for doctor in search_result %}
+    <form action="{% url 'appointment:get_app4' user_counter patient_counter doctor.pk %}" method="post" >
+        {% csrf_token %}
+
+        <h3>{{doctor.name}} </h3><br>
+
+        <h4>Gender : {{doctor.gender}}</h4><br>
+
+        <h4>Contact No: {{doctor.contact_no}}</h4>
+
+        <h4>Qualification: {{doctor.degree}}</h4>
+
+        <input type="submit" value="Get Appointment">
+					<!--more things to show here in search result-->
+
+
+    </form>
+{% endfor %}
+
+
+
+
+
+
+</body>
+</html>

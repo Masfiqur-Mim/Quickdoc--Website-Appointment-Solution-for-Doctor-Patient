@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<form action="registration_doctor.html" method="post">
+<form action= "{% url 'accounts:checkCompletedDocReg' %}" method="post">
+    {% csrf_token %}
 
 <fieldset>
 
@@ -22,21 +23,31 @@ Gender:
 <input type="radio" value="other" name="doc_gender">Other<br>
 <br>
 
-Address: <input type="text" name="address"> Time: <input type="text" name="doc_sitting_time"><br>
+Address: <input type="text" name="address">
 
-Speciality: <input type="text" name="doc_speciality"><br><!--will make this a drop down menu later-->
+Specialty: <!--will make this a drop down menu later-->
+    <select required name="doc_specialty">
+                <option value="Heart">Heart</option>
+                <option value="Pediatric">Pediatric</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Kidney">Kidney</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="Ear Nose Throat">Ear Throat Nose</option>
+    </select><br>
 
-Contact No.: <input type="text" name="mobile"><br><!--if enough time is there,will make this a multivalued data structure.mainly a drop down menu-->
+Contact No.: <input type="text" name="doc_mobile"><br>
 
 </fieldset>
 
-Email: <input type="text" name="email"><br>
+Email: <input type="text" name="doc_email"><br>
 
-Password: <input type="password" name="pass"><br>
+Password: <input type="password" name="doc_pass"><br>
 
-Confirm Password: <input type="password" name="conf_pass"><br>
+Confirm Password: <input type="password" name="doc_conf_pass"><br>
 
-Degrees: <input type="text" name="doc_degree"><br><!--drop down menu later-->
+Degrees: <input type="text" name="doc_degree"><br><!--check box menu later-->
+
+Projected time for each patient: <input type="text" name="patient_app_time"><br>
 
 <input type="submit" value="submit"><br>
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pending Appointments</title>
+</head>
+<body>
+
+{% for app in pending_apps %}
+
+    Patient Name : {{app.patient.name}}
+    <form action="#" method="post">
+        <input type="submit" value="Approve">
+
+    </form>
+
+    <form action="#" method="post">
+
+        <input type="submit" value="Reject">
+
+    </form>
+
+{% endfor %}
+
+
+
+</body>
+</html>

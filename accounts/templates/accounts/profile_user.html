@@ -2,33 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Profile</title>
 </head>
 <body>
-{% user=context[0] %}
 
 <h1>Hello, {{user.username}}</h1>
 
 <br>
 <!--Add some css here to beautify the whole page,mainly the top portion-->
 
-Name: {{user.firstname+" "+user.lastname}}<br>
+Name: {{user.firstname}} {{user.lastname}}<br>
 
 Contact No: {{user.contact_no}}<br>
 
 Email: {{user.email}}<br>
 
-<!--Address: {{user.address+","+user.city}}<br>-->
+<!--Address: <br>-->
 
-Current Patients: <!-- will be a list view of patient's name under this account-->
-<br>
-
+<!--
 <form action="" method="post">
 
 <input type="submit" value="submit">Change Profile Information<br>
 
 </form>
-
+-->
 
 </body>
 </html>

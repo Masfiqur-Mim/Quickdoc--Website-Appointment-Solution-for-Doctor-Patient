@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h3>Appointment Request Almost Done!</h3>
+
+<!--user menu bar-->
+
+<h4></h4>
+
+<form action="{% url 'appointment:app_done' user_counter patient_counter doctor_counter %}" method="post">
+
+    {% csrf_token %}
+    <select name="doc_has_sitting_pk">
+
+        {% for sitting in sittings %}
+
+           <option value="{{sitting.pk}}">{{sitting.location.address}} on {{sitting.location.day}}</option>
+
+        {% endfor %}
+
+    </select>
+
+    <input type="submit" value="Done">
+
+</form>
+
+
+<a href="#">Back to Home</a>
+
+
+
+
+</body>
+</html>
